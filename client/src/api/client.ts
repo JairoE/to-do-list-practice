@@ -12,7 +12,6 @@ export const getUser = async (id: number) => {
 };
 
 export const createTodoItem = async (text: string, userId: number) => {
-  // TODO: implement todo creation (associate with userId)
   try {
     const response = await fetch(`${BASE_URL}/todos`, {
       method: "POST",
@@ -30,7 +29,6 @@ export const createTodoItem = async (text: string, userId: number) => {
 };
 
 export const getTodosForUser = async (userId: number) => {
-  // TODO: implement fetching all todos for a user
   try {
     const response = await fetch(`${BASE_URL}/todos?userId=${userId}`);
     console.log("response", response);
@@ -45,7 +43,6 @@ export const updateTodoItem = async (
   id: number,
   updates: {text?: string; completed?: boolean}
 ) => {
-  // TODO: implement updating a todo item
   try {
     const response = await fetch(`${BASE_URL}/todos/${id}`, {
       method: "PUT",
