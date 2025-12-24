@@ -6,7 +6,6 @@ const router = Router();
 // POST /api/todos
 // Description: Creates a todo list item for a given user.
 router.post("/", async (req: Request, res: Response) => {
-  // TODO: implement todo creation (associate with userId)
   const {text, userId, completed} = req.body;
   console.log("text", text);
   console.log("userId", userId);
@@ -28,7 +27,6 @@ router.post("/", async (req: Request, res: Response) => {
 // Description: Gets all todo items for a specific user.
 router.get("/", async (req: Request, res: Response) => {
   const {userId} = req.query;
-  // TODO: implement fetching all todos for a user
   try {
     const todos = await TodoItem.findAll({where: {userId: userId}});
     return res.status(200).json(todos);
@@ -43,8 +41,6 @@ router.get("/", async (req: Request, res: Response) => {
 // PUT /api/todos/:id
 // Description: Updates an existing todo item.
 router.put("/:id", async (req: Request, res: Response) => {
-  // TODO: implement updating a todo item
-
   const {id} = req.params;
   const {text, completed} = req.body;
 
